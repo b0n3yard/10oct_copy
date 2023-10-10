@@ -1,0 +1,16 @@
+{
+  "name": "10oct",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm i express && npm i mysql2 && node server.js",
+    "test": "mysql -u root -p"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.6.1"
+  }
+}

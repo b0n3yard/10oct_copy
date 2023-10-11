@@ -12,6 +12,26 @@ router.post('/games', (cro,sro) =>{
         console.log(res)
     })
     console.log(cro)
+    sro.send(res)
+})
+
+router.get('/games/:game_id',(cro,sro)=>{
+    const gameid = cro.params.game_id
+    db.query(`select * from games where id=?`, [gameid],(err, res)=>{
+        if(err) throw err;
+
+        console.log(res)
+        sro.send(res)
+    })
+})
+router.delete('/game/:game_id',(cro,sro)=>{
+    const gameid = cro.params.game_id
+    db.query(`delete from games where id=?`, [gameid],(err, res)=>{
+        if(err) throw err;
+
+        console.log(res)
+        // sro.send(res)
+    })
 })
 
 module.exports = router;
